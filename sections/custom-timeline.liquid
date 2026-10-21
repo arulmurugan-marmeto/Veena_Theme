@@ -53,7 +53,7 @@
                     <ul class="splide__list">
                         {% if section.blocks.size > 0  %}  
                             {% for block in section.blocks %}
-                              <li class="splide__slide {% cycle 'margin-top', 'odd' as row_class %}">
+                              <li class="splide__slide {% cycle 'margin-top', 'odd' %}">
                                 <div class ="custom-timeline--years">
                                   <img class="timeline-logo" src="{{ section.settings.year_pointer | image_url }}" alt="timeline" height="30" width="30" />
               
@@ -244,3 +244,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% cycle 'margin-top', 'odd' as row_class %}"
+  to: "{% cycle 'margin-top', 'odd' %}"
+  position: 2163..2194
+{% endcomment %}
